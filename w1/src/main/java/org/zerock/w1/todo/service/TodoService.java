@@ -29,7 +29,8 @@ public class TodoService{
     }
 }
 
-// 이 코드는 
+// 이 코드는 어디서나 호출해도 동일한 객체를 호출하게 된다.
+ TodoService todoService = TodoService.getInstance();
  */
 /*
 Java의 enum은 class이다.
@@ -66,5 +67,15 @@ public enum TodoService {
         }).collect(Collectors.toList());
 
         return todoDTOS;
+    }
+
+    public TodoDTO get(Long tno){
+        TodoDTO dto = new TodoDTO();
+        dto.setTno(tno);
+        dto.setTitle("Sample Todo");
+        dto.setDueDate(LocalDate.now());
+        dto.setFinished(true);
+
+        return dto;
     }
 }
