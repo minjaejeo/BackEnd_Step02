@@ -1,8 +1,10 @@
 package org.zerock.w1.todo;
 
+
 import org.zerock.w1.todo.dto.TodoDTO;
 import org.zerock.w1.todo.service.TodoService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name="todoListController", urlPatterns = "/todo/list")
+@WebServlet(name="todoListController", urlPatterns="/todo/list")
 public class TodoListController extends HttpServlet {
 
     @Override
@@ -21,10 +23,10 @@ public class TodoListController extends HttpServlet {
         List<TodoDTO> dtoList = TodoService.INSTANCE.getList();
         req.setAttribute("list", dtoList);
 
-//        System.out.println("DB로부터 목록을 꺼내어 전달");
+//        System.out.println("DB로부터 목록을 꺼내어 list.jsp에 전달");
 
-        /*
-        RequsetDispatcher rd = req.getRequestDispatcher("todoList.jsp");
+        /* 이 코드를 아래처럼 축약했다.
+        RequestDispatcher rd = req.getRequestDispatcher("todoList.jsp");
         rd.forward(req, resp);
         */
 
