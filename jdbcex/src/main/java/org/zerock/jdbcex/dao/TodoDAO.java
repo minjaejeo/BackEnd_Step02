@@ -28,7 +28,7 @@ public class TodoDAO {
     }
     public String getTime2() throws Exception{
         String now = null;
-        
+
     }
 }
 
