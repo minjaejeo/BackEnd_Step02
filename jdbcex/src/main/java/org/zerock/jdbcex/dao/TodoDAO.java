@@ -29,6 +29,22 @@ public class TodoDAO {
     public String getTime2() throws Exception{
         String now = null;
 
+<<<<<<< HEAD
+=======
+        /*
+        lombok에서 제공해주는 @Cleanup을 사용하면
+        메서드가 종료될 때 자동으로 Close()를 호출해준다.
+         */
+
+        @Cleanup Connection connnection = ConnectionUtil.INSTANCE.getConnection();
+        @Cleanup PreparedStatement preparedStatement = connnection.prepareStatement("select now(");
+        @Cleanup ResultSet resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+        now = resultSet.getString(1);
+
+        return now;
+>>>>>>> eab6c48ee0ce9ca1917f9efa3ba33eeec023f71f
     }
 }
 
