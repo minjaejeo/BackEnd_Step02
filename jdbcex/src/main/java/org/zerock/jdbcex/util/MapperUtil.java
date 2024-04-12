@@ -13,9 +13,9 @@ public enum MapperUtil {
         this.modelMapper.getConfiguration()
                 .setFieldMatchingEnabled(true)
                 .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE)
-                .setMatchingStrategy(MatchingStrategies. STRICT);
+                .setMatchingStrategy(MatchingStrategies.STRICT);
     }
-    public ModelMapper get(){
-        return modelMapper;
-    }
+
+    public ModelMapper get(){return this.modelMapper;}
+
 }
