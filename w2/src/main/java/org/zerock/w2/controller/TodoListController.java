@@ -1,5 +1,6 @@
 package org.zerock.w2.controller;
 
+
 import lombok.extern.log4j.Log4j2;
 import org.zerock.w2.dto.TodoDTO;
 import org.zerock.w2.service.TodoService;
@@ -20,14 +21,14 @@ public class TodoListController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        log.info("todo list..........");
+        log.info("todo List..............");
 
         ServletContext servletContext = req.getServletContext();
 
         log.info("appName: " + servletContext.getAttribute("appName"));
 
         try{
-            List<TodoDTO> dtoList= todoService.listAll();
+            List<TodoDTO> dtoList = todoService.listAll();
             req.setAttribute("dtoList", dtoList);
             req.getRequestDispatcher("/WEB-INF/todo/list.jsp").forward(req, resp);
 
@@ -35,6 +36,6 @@ public class TodoListController extends HttpServlet {
             log.error(e.getMessage());
             throw new ServletException("list error");
         }
-    }
 
+    }
 }
