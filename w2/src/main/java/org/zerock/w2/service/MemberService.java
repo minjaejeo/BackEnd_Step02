@@ -18,8 +18,8 @@ public enum MemberService {
     }
     public MemberDTO login(String mid, String mpw) throws Exception{
         MemberVO vo = dao.getWithPassword(mid, mpw);
-
         MemberDTO memberDTO = modelMapper.map(vo, MemberDTO.class);
+
         return memberDTO;
     }
     public void updateUuid(String mid, String uuid) throws Exception{
