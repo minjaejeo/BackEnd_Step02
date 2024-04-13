@@ -1,5 +1,6 @@
 package org.zerock.dao;
 
+
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.junit.jupiter.api.Test;
@@ -23,6 +24,7 @@ public class ConnectTests {
         Connection connection = ds.getConnection();
 
         System.out.println(connection);
+
         connection.close();
     }
 }
