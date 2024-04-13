@@ -17,11 +17,11 @@ import java.time.format.DateTimeFormatter;
 @Log4j2
 public class TodoRegisterController extends HttpServlet {
     private TodoService todoService = TodoService.INSTANCE;
-    private final DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final DateTimeFormatter DateFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        log.info("/todo/register GET ......");
+        log.info("/todo/register GET ................");
         req.getRequestDispatcher("/WEB-INF/todo/register.jsp").forward(req, resp);
 
     }
@@ -30,14 +30,14 @@ public class TodoRegisterController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         TodoDTO todoDTO = TodoDTO.builder()
                 .title(req.getParameter("title"))
-                .dueDate(LocalDate.parse(req.getParameter("dueDate"),DATEFORMATTER))
+                .dueDate(LocalDate.parse(req.getParameter("dueDate"), DateFORMATTER))
                 .build();
 
-        log.info("/todo/register POST ......");
+        log.info("/todo/register POST ................");
         log.info(todoDTO);
-        try{
+        try {
             todoService.register(todoDTO);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         resp.sendRedirect("/todo/list");

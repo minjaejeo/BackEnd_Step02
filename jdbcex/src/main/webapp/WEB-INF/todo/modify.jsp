@@ -16,13 +16,13 @@
         <input type="text" name="tno" value="${dto.tno}" readonly>
     </div>
     <div>
-        <input type="text" name="title" value="${dto.title}" >
+        <input type="text" name="title" value="${dto.title}">
     </div>
     <div>
-        <input type="date" name="dueDate" value="${dto.dueDate}" >
+        <input type="date" name="dueDate" value="${dto.dueDate}">
     </div>
     <div>
-        <input type="checkbox" name="finished" ${dto.finished ? "checked" : ""}>
+        <input type="checkbox" name="finished" ${dto.finished ? "chcked" : ""}>
     </div>
     <div>
         <button type="submit">Modify</button>
