@@ -1,5 +1,6 @@
 package org.zerock.springex.mapper;
 
+
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +17,5 @@ public class TimeMapperTests {
     private TimeMapper timeMapper;
 
     @Test
-    public void testGetTime(){
-        log.info(timeMapper.getTime());
-    }
+    public void testGetTime(){ log.info(timeMapper.getTime()); }
 }
