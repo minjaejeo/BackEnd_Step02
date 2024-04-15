@@ -29,5 +29,9 @@
     <form action="/logout" method="post">
         <button>LOGOUT</button>
     </form>
+
+    <form action="/logout" method="post">
+        <button>LOGOUT</button>
+    </form>
 </body>
 </html>

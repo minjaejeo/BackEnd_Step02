@@ -22,9 +22,6 @@
         <button type="reset">RESET</button>
         <button type="submit">REGISTER</button>
     </div>
-
-
-
 </form>
 </body>
 </html>

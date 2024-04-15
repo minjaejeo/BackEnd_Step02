@@ -13,20 +13,20 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-@WebServlet(name = "todoModifyController", value = "/todo/modify")
+@WebServlet(name="todoModifyController", urlPatterns="/todo/modify")
 @Log4j2
 public class TodoModifyController extends HttpServlet {
     private TodoService todoService = TodoService.INSTANCE;
-    private final DateTimeFormatter DATEFORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
             Long tno = Long.parseLong(req.getParameter("tno"));
             TodoDTO todoDTO = todoService.get(tno);
-            // 데이터담기
             req.setAttribute("dto", todoDTO);
             req.getRequestDispatcher("/WEB-INF/todo/modify.jsp").forward(req, resp);
+
         }catch(Exception e){
             log.error(e.getMessage());
             throw new ServletException("modify get... error");
@@ -40,7 +40,7 @@ public class TodoModifyController extends HttpServlet {
         TodoDTO todoDTO = TodoDTO.builder()
                 .tno(Long.parseLong(req.getParameter("tno")))
                 .title(req.getParameter("title"))
-                .dueDate(LocalDate.parse(req.getParameter("dueDate"),DATEFORMAT))
+                .dueDate(LocalDate.parse(req.getParameter("dueDate"), DATEFORMATTER))
                 .finished(finishedStr != null && finishedStr.equals("on"))
                 .build();
         log.info("/todo/modify POST...");
