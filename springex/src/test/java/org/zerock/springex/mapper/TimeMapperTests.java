@@ -26,6 +26,7 @@ public class TimeMapperTests {
 
     @Test
     public void testNow() {
+
         log.info(timeMapper2.getNow());
     }
 }
