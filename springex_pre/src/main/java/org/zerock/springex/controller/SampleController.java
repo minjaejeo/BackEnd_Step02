@@ -3,8 +3,13 @@ package org.zerock.springex.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.springex.dto.TodoDTO;
+
+import java.time.LocalDate;
 
 // (Page)Controller역할을 하는 bean으로 생성부탁해
 @Controller
@@ -55,4 +60,56 @@ public class SampleController {
     java 변환 코드로 처리하는 방법이 있지만,
     스프링은 이것을 보다 편하게 하도록 도와준다.
      */
+    @GetMapping("/ex3")
+    public void ex3(LocalDate dueDate){
+        log.info("ex3.............");
+        log.info("dueDate: " + dueDate);
+    }
+    @GetMapping("/ex4")
+    public void ex4(Model model){
+        log.info("--------------");
+
+        // model에 추가한 값을 꺼내서 request에 저장한다.
+        model.addAttribute("message", "Hello World");
+    }
+    /*
+    웹에서 수신된 parameter들은 todoDTO의 동일한 필드에 저장되고
+    todoDTO라는 이름으로 request에 전달된다.
+    name이라는 이름으로 Albert가 request에 전달된다.
+    
+    request에 전달된다는 의미는 결국 jsp에서 꺼내어 쓸 수 있다는 의미
+     */
+    @GetMapping("/ex_1")
+    public void ex4Extra(TodoDTO todoDTO, Model model){
+        log.info(todoDTO);
+        model.addAttribute("name", "Albert");
+    }
+    @GetMapping("/ex5")
+    public String ex5(RedirectAttributes redirectAttributes){
+        // 리다이렉션 시 필요한 정보를 전달하는 것
+        // 주소 옆에 매개변수로 주소와 함께 parameter로 전달된다.
+        redirectAttributes.addAttribute("name", "ABC");
+
+        // 서버가 재접속명령을 브라우저한테 보냈을 때 1번만 사용할 수 있는 1회성 데이터
+        redirectAttributes.addFlashAttribute("result", "success");
+
+        // 리턴값이 존재하면 jsp로 전달되는 것이 아니고
+        // 브라우저한테 아래 주소로 재접속을 하도록 하는 것
+
+        return "redirect:/ex6";
+    }
+    @GetMapping("/ex6")
+    public void ex6(){
+        // /WEB-INF/views/ex6.jsp로 이동한다.
+    }
+    /*
+    age에 숫자형 문자열을 주지 않고
+    일부러 숫자로 자동 변환되지 않는 문자열을 주어서
+    예외를 발생시킨다.
+     */
+    @GetMapping("/ex7")
+    public void ex7(String name, int age){
+        log.info("name..." + name);
+        log.info("age..." + age);
+    }
 }
