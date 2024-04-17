@@ -79,7 +79,7 @@ public class SampleController {
     
     request에 전달된다는 의미는 결국 jsp에서 꺼내어 쓸 수 있다는 의미
      */
-    @GetMapping("/ex_1")
+    @GetMapping("/ex4_1")
     public void ex4Extra(TodoDTO todoDTO, Model model){
         log.info(todoDTO);
         model.addAttribute("name", "Albert");
