@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.springex.dto.PageRequestDTO;
 import org.zerock.springex.dto.TodoDTO;
 import org.zerock.springex.service.TodoService;
 
@@ -25,10 +26,22 @@ public class TodoController {
 
     // /todo/list
     @RequestMapping("/list")
-    public void list(Model model){
+    public void list(@Valid PageRequestDTO pageRequestDTO,
+                     BindingResult bindingResult,
+                     Model model){
         log.info("todo list...........");
 
-        model.addAttribute("dtoList", todoService.getAll());
+        if(bindingResult.hasErrors()){
+            // 디폴트 값을 가지게 된다.(page=1, size=10)
+            // 첫번째 페이지가 나오도록
+            pageRequestDTO = PageRequestDTO.builder().build();
+        }
+        // PageRequestDTO를 todoService.getList에 넘겨주면, PageResponseDTO를 리턴한다.
+        // 이 리턴된 값을 model -> request -> jsp에 전달
+        // 이 전달된 responseDTO를 jsp가 꺼내서 boostrap의 pagination 컴포턴트를 구성
+        model.addAttribute("responseDTO", todoService.getList(pageRequestDTO));
+        
+//        model.addAttribute("dtoList", todoService.getAll());
 
         // /WEB-INF/views/todo/list.jsp
     }
