@@ -1,5 +1,6 @@
 package org.zerock.springex.domain;
 
+
 import lombok.*;
 
 import java.time.LocalDate;
