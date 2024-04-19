@@ -1,18 +1,15 @@
 package org.zerock.springex.service;
 
-import org.zerock.springex.domain.TodoVO;
+
 import org.zerock.springex.dto.PageRequestDTO;
 import org.zerock.springex.dto.PageResponseDTO;
 import org.zerock.springex.dto.TodoDTO;
 
-import java.util.List;
-
 public interface TodoService {
-
-    void register(TodoDTO todoDTo);
+    void register(TodoDTO todoDTO);
 
     // 테이블의 데이터를 모두 가져와라
-//    List<TodoDTO> getAll();
+    // List<TodoDTO> getAll();
 
     // 해당 페이지, 해당 사이즈만큼만 가져와라
     PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO);
@@ -21,7 +18,5 @@ public interface TodoService {
 
     void remove(Long tno);
 
-    void modify(TodoDTO todoDTo);
-
-
+    void modify(TodoDTO todoDTO);
 }
