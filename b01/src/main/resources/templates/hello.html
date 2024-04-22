@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,17 +7,17 @@
 <body>
 <h1 th:text="${msg}"></h1>
 
-<!-- 1) 아래처럼 주석을 사용하면 브라우저에 아예 전송이 안된다 -->
-<!--/*<div>*/-->
-<!--/*    <h1>AAAA</h1>*/-->
-<!--/*</div>*/-->
+<!--/*  <h3 th:each="${sos}">SOS</h3> */-->
 
-<!--/* <div>*/-->
-<!--/*    <h1>BBBB</h1>*/-->
-<!--/*</div>*/-->
-<!-- 2) 타임리프에서 필요하면 변수를 선언하고 사용할 수 있다. -->
-<div th:with="num1 = ${10}, num2=${20}">
+<!--/* ${aaaa + bbb } */-->
+<!--/*
+ <div>
+    <h1>AAAA</h1>
+ </div>
+*/-->
+<div th:with="num1 = ${10}, num2 = ${20}">
     <h4 th:text="${num1 + num2}"></h4>
 </div>
+
 </body>
 </html>

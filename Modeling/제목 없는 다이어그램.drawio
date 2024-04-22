@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" modified="2024-04-22T06:32:19.910Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" etag="03wLkMAV53blDjffGKNo" version="24.2.7" type="device">
+  <diagram name="페이지-1" id="XShx7ZAxj1Qzoif-faet">
+    <mxGraphModel dx="965" dy="374" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--1" value="학생" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--2" value="과정" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--3" target="YSx7Kg4Y1UXlu8BTzjf--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--3" target="YSx7Kg4Y1UXlu8BTzjf--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400.0000000000002" y="379.68965517241384" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--3" value="수강&lt;div&gt;등록&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--7" target="YSx7Kg4Y1UXlu8BTzjf--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--7" value="&lt;u&gt;학번&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="260" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--8" target="YSx7Kg4Y1UXlu8BTzjf--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--8" value="학생이름" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="355" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--9" target="YSx7Kg4Y1UXlu8BTzjf--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--9" value="휴대폰" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="450" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--15" target="YSx7Kg4Y1UXlu8BTzjf--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--15" value="&lt;u&gt;과정코드&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="260" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--16" target="YSx7Kg4Y1UXlu8BTzjf--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--16" value="과정명" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="355" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="YSx7Kg4Y1UXlu8BTzjf--17" target="YSx7Kg4Y1UXlu8BTzjf--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSx7Kg4Y1UXlu8BTzjf--17" value="학점" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="460" width="80" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

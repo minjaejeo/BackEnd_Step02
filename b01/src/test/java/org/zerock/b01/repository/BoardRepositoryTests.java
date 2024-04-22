@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.zerock.b01.domain.Board;
+import org.zerock.b01.dto.BoardDTO;
 
 import java.util.List;
 import java.util.Optional;
@@ -52,7 +53,7 @@ public class BoardRepositoryTests {
 
         Board board = result.orElseThrow();
 
-        board.chage("update..title 100" , "update content 100");
+        board.change("update..title 100" , "update content 100");
 
         /*
         save: pk가 테이블에 존재하지 않으면 => 삽입 => insert문
@@ -138,4 +139,5 @@ public class BoardRepositoryTests {
 
         result.getContent().forEach(board -> log.info(board));
     }
+
 }
