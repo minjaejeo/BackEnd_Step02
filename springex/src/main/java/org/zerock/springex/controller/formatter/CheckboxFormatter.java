@@ -1,16 +1,18 @@
 package org.zerock.springex.controller.formatter;
 
+
 import org.springframework.format.Formatter;
 
 import java.text.ParseException;
 import java.util.Locale;
 
-public class CheckboxFormatter implements Formatter<Boolean> {
+public class CheckboxFormatter implements Formatter<Boolean>{
+
     @Override
     public Boolean parse(String text, Locale locale) throws ParseException {
-        if(text == null){
+        if(text == null)
             return false;
-        }
+
         return text.equals("on");
     }
 
