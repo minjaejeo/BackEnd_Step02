@@ -143,6 +143,39 @@
                             '이벤트 버블링'은 자식들에서 일어난 일을 공통으로 처리할 수 잇어서
                             많이 사용된다.
                              */
+                            document.querySelector(".pagination").addEventListener("click", function(e){
+                                e.preventDefault()
+                                e.stopPropagation()
+
+                                const target = e.target  // 이벤트 발생기킨 주체(자식)
+
+                                // <a></a> 태그에서 발생한 것이 아니라면 무시
+                                if(target.tagName !== 'A'){
+                                    return
+                                }
+                                // 해당 자식에서 data-num이라는 사용자 속성값을 추출
+                                const num = target.getAttribute("data-num")
+
+                                const formObj = document.querySelector("form")
+
+                                /*
+                                기존 form에 존재하는 parameter(name=value)에 추가로
+                                page 변수를 더해서 서버로 전송
+                                // /todo/list" "get"요청으로 주소로 전송
+                                 */
+                                formObj.innerHTML += `<input type='hidden' name='page' value='\${num}'>`
+
+                                formObj.submit();
+                            }, false)
+
+                            document.querySelector(".clearBtn").addEventListener("click", function(e){
+                                e.preventDefault()  // tag에 부여된 html기본동작을 하지 않도록
+                                e.stopPropagation() // 이벤트 전파를 중지
+
+                                // 아무 값도 전달하지 않으므로 PageRequestDTO에 설정된 default값이 적용된다.
+                                // 그러므로 1페이지, 10개 데이터가 보여진다.
+                                self.location = '/todo/list'
+                            }, false)
                         </script>
                     </div>
                 </div>
