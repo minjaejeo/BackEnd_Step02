@@ -45,7 +45,7 @@ public interface BoardRepository extends JpaRepository<Board, Long>, BoardSearch
     연결된 자식 필드인 imageSet을 @EntityGrapg 를 선언하면
     아래 JPQL을 실행할 때 자식테이블과의 필드 연결을 통해서 함께 조회하게 된다.
      */
-    @EntityGraph(attributePaths = {"imagesSet"})
+    @EntityGraph(attributePaths = {"imageSet"})
     @Query("select b from Board b where b.bno= :bno")
     Optional<Board> findByIdWithImages(Long bno);
 }

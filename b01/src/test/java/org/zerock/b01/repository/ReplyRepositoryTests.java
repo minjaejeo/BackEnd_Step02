@@ -22,7 +22,7 @@ public class ReplyRepositoryTests {
 
     @Test
     public void testInsert(){
-        Long bno = 100L;
+        Long bno = 1L;
 
         Board board = Board.builder().bno(bno).build();
 
@@ -47,4 +47,19 @@ public class ReplyRepositoryTests {
             log.info(reply);
         });
     }
+
+    @Test
+    public void testReplyTextAndReplyer(){
+        Long bno = 100L;
+
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("rno").descending());
+
+        Page<Reply> result = replyRepository.findByReplyTextAndReplyer("댓글.....","replyer1", pageable);
+
+        result.getContent().forEach(reply -> {
+            log.info(reply);
+        });
+    }
+
+
 }
